@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<!DOCTYPE html> <!--sets file type-->
+<html lang="en"> <!--html tag to wrap all content with language attribute set to english-->
+<head> <!--head tag-->
+    <meta charset="UTF-8"> <!--meta tag defining character set used to display page-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--meta tag defining size and scale of page when displayed. Page displays as wide as device it's being viewed on and at a zoom scale of 1-->
+    <title>Document</title> <!--title tag indicating title of page (used for search enginges, displays in tab in browser)-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!--links the font awesome library so icons can be used-->
+    <link rel="stylesheet" href="css/style.css"> <!--links the css sheet so content is styled-->
+</head> <!--closing head tag-->
+<body> <!--opening body tag-->
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,30 +18,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Todo List: </h1>
-    <ul class="todoItems">
-    <% for(let i=0; i < items.length; i++) {%>
-        <li class="item">
-            <% if(items[i].completed === true) {%>
-                <span class='completed'><%= items[i].thing %></span>
-            <% }else{ %>
-                <span><%= items[i].thing %></span>
+    <h1>Todo List: </h1> <!--primary heading of the content on the page, describes all other content in the body section of the page-->
+    <ul class="todoItems"> <!--unordered list opening tag with a class of todoItems-->
+    <% for(let i=0; i < items.length; i++) {%> <!--for loop that wil run through data base documents from server and do the following-->
+        <li class="item"> <!--add a list item element with class of 'item'-->
+            <% if(items[i].completed === true) {%> <!--if the to do document from the database is completed-->
+                <span class='completed'><%= items[i].thing %></span> <!--create a span with class of 'completed' that wraps thing value from the to do document -->
+            <% }else{ %> <!--if the to do document from the database is not completed -->
+                <span><%= items[i].thing %></span> <!--create a span that wraps thing value from the to do document-->
             <% } %>    
-            <span class='fa fa-trash'></span>
-        </li>
+            <span class='fa fa-trash'></span> <!--add a trash can icon-->
+        </li> <!--closing li element tag-->
     <% } %>
-    </ul>
+    </ul> <!--closing ul element tag-->
 
-    <h2>Left to do: <%= left %></h2>
+    <h2>Left to do: <%= left %></h2> <!--create an h2 element that indicate the number of tasks left to do-->
 
-    <h2>Add A Todo:</h2>
+    <h2>Add A Todo:</h2> <!--create an h2 element that indicates the next section of content is adding a to do task-->
 
-    <form action="/addTodo" method="POST">
-        <input type="text" placeholder="Thing To Do" name="todoItem">
-        <input type="submit">
-    </form>
+    <form action="/addTodo" method="POST"> <!--create form elment with an action of /addTodo (will make /addTodo request to server), and POST method-->
+        <input type="text" placeholder="Thing To Do" name="todoItem"> <!--create input field that takes text, placeholder is "thing to do", name is 'todoItem'-->
+        <input type="submit"> <!--create input field that will submit the form data-->
+    </form> <!--closing form tag-->
     
 
-    <script src='js/main.js'></script>
-</body>
-</html>
+    <script src='js/main.js'></script> <!--links main.js file to enable asynchronous functions to add/delete/update to do tasks-->
+</body> <!--closing body tag-->
+</html> <!--closing html tag-->

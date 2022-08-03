@@ -1,7 +1,7 @@
-h1{
-    color: red;
+h1{ /*select h1 element*/
+    color: red; /*set text color as red*/
 }
-.completed{
-    color: gray;
-    text-decoration: line-through;
+.completed{ /*select elements with a class of 'completed'*/
+    color: gray; /*set text color to gray*/
+    text-decoration: line-through; /*underline text*/
 }
